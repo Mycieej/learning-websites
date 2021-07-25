@@ -1,0 +1,690 @@
+@font-face {
+    font-family: Proxima Nova Alt Light;
+    src: url("ProximaNovaAltLight.otf");
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@tablet: ~'(min-width: 757px)';
+@laptop: ~'(min-width: 979px)';
+@desktop: ~'(min-width: 1200px)';
+
+* {
+    box-sizing: border-box;
+}
+
+section, h1, h2, h3, h4, a, p {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-family: Playfair Display, Arial;
+    font-size: 40px;
+    color: #fff;
+
+    @media @tablet {
+        font-size: 50px;
+    }
+
+    @media @laptop {
+        font-size: 65px;
+    }
+
+    @media @desktop {
+        font-size: 70px;
+    }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #000;
+}
+
+#hamburger-menu {
+    transform: translateX(100%);
+    position: fixed;
+    width: 75%;
+    height: ~'calc(100% - 50px)';
+    background-color: #000000;
+    z-index: 4;
+    bottom: 0;
+    right: 0;
+    transition: transform 350ms ease-in-out;
+
+    .hamburger-menu__link {
+        color: #fff;
+        font-family: Proxima Nova Alt Light, Arial;
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        margin: 0 10px;
+        border-bottom: 1px solid #fff;
+        display: block;
+    }
+
+    .hamburger-menu__link:first-of-type {
+        border-top: 1px solid #fff;
+        margin-top: 5px;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #000000;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+
+    @media @laptop {
+        position: static;
+        top: auto;
+        left: auto;
+        width: auto;
+        background-color: transparent;
+        height: auto;
+    }
+
+    #hamburger {
+        position: absolute;
+        right: 0;
+        z-index: 1000;
+
+        @media @laptop {
+            display: none;
+        }
+    }
+
+    .nav-top {
+
+        @media @laptop {
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 122px;
+        }
+
+        .nav-top__link {
+            display: none;
+
+            @media @laptop {
+                font-family: Proxima Nova Alt Light, Arial;
+                color: #fff;
+                font-size: 25.5px;
+                margin-top: 60px;
+                display: block;
+            }
+
+            @media @desktop {
+                font-size: 28.5px;
+            }
+        }
+
+        #nav-top__logo {
+            font-size: 0;
+    
+            img {
+                width: 92.5%;
+            }
+    
+            @media @laptop {
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 30px;
+                font-family: Playfair Display, Arial;
+                color: #fff;
+                margin-top: 30px;
+    
+                img {
+                    width: 43px;;
+                }
+            }
+
+            @media @desktop {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+#wrapper {
+    width: 100%;
+
+    @media @tablet {
+        max-width: 749px;
+        margin: 0 auto;
+    }
+
+    @media @laptop {
+        max-width: 970px;
+    }
+
+    @media @desktop {
+        max-width: 1170px;
+    }
+}
+
+#homepage {
+    min-height: 120vh;
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+
+    @media @tablet {
+        justify-content: space-around;
+    }
+
+    .trees-background {
+        height: 120vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        opacity: 16%;
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+        }
+
+        @media @laptop {
+            height: ~'calc(120vh + 122px)';
+        }
+    }
+
+    #headings-main {
+        margin-top: 40vh;
+        margin-left: 5%;
+        max-width: 400px;
+        font-family: Proxima Nova Alt Light, Arial;
+        font-size: 16px;
+        color: #fff;
+        z-index: 2;
+        padding-right: 5%;
+
+        @media @tablet {
+            max-width: none;
+            font-size: 19px;
+            margin-left: 0;
+            padding-right: 0;
+            width: 440px;
+        }
+
+        @media @laptop {
+            width: 565px;
+            font-size: 24.5px;
+            margin-top: 30vh;
+        }
+
+        @media @desktop {
+            width: 605px;
+            font-size: 26.5px;
+        }
+
+        .headings-main--cream {
+            color: #E1C799
+        }
+
+        #headings-main__more {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: 140px;
+            align-items: center;
+            
+            @media @tablet {
+                width: 180px;
+            }
+
+            @media @laptop {
+                width: 225px;
+            }
+
+            @media @desktop {
+                width: 250px;
+            }
+        }
+
+        #headings-main__arrow {
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+            background-color: #1c1c1c;
+            border: 1px solid rgba(255, 255, 255, 30%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media @tablet {
+                width: 30px;
+                height: 30px;
+            }
+
+            @media @laptop {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        #headings-main__arrow img {
+            height: 55%;
+        }
+    }
+
+    #images-main {
+        position: absolute;
+        right: 10%;
+        top: 10vh;
+        z-index: 1;
+
+        @media @tablet {
+            position: relative;
+            top: auto;
+            right: auto;
+            margin-top: 10vh;
+        }
+
+        @media @laptop {
+            margin-top: 0;
+        }
+        
+        #images-main__wine {
+            height: 85vh;
+            min-height: 310px;
+            max-height: 922px;
+        }
+
+        #images-main__leaf {
+            position: absolute;
+            height: 47%;
+            min-height: 155px;
+            max-height: 374px;
+            top: 50%;
+            right: -105%;
+            z-index: -1;
+
+            @media @tablet {
+                top: 40%;
+                right: -137%;
+            }
+
+            @media @laptop {
+                right: -105%;
+                top: 35%;
+            }
+        }
+    }
+
+    #dark-bottom {
+        width: 100vw;
+        height: 20vh;
+        position: absolute;
+        top: 100vh;
+        left: 0;
+        background-image: linear-gradient(to bottom, transparent 0%, #000 80%);
+        z-index: 3;
+
+        @media @laptop {
+            height: ~'calc(20vh + 122px)';
+        }
+    }
+}
+
+#intersection {
+    background-color: #0f110f;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 15px;
+    z-index: 1;
+    position: relative;
+    box-shadow: 30vw 0 0 #0f110f, -30vw 0 0 #0f110f;
+
+    @media @tablet {
+        height: 400px;
+    }
+
+    @media @laptop {
+        height: 450px;
+    }
+
+
+    h1 {
+        max-width: 500px;
+        opacity: 0;
+        margin-bottom: -140px;
+
+        @media @tablet {
+            max-width: none;
+            width: 600px;
+        }
+
+        @media @laptop {
+            width: 750px;
+        }
+
+        @media @desktop {
+            width: 800px;
+        }
+    }
+
+    #intersection__button {
+        background-color: #fff;
+        border-radius: 10px;
+        font-family: Proxima Nova Alt Light, Arial;
+        font-size: 15px;
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        border: 2px solid #30302f;
+        color: #1c1c1c;
+        margin-top: 25px;
+        z-index: 1;
+        opacity: 0;
+
+        @media @tablet {
+            width: 275px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 17.5px;
+        }
+
+        @media @laptop {
+            width: 350px;
+            height: 75px;
+            line-height: 75px;
+            font-size: 22.5px;
+        }
+    }
+
+    #intersection__grape {
+        position: absolute;
+        opacity: 10%;
+        z-index: 0;
+        top: -25px;
+        height: 325px;
+        left: -75px;
+        opacity: 0;
+        transform: translateX(-30vw);
+
+        @media @tablet {
+            height: 375px;
+        }
+
+        @media @laptop {
+            height: 400px;
+        }
+    }
+
+    #intersection__opener {
+        position: absolute;
+        opacity: 10%;
+        z-index: 0;
+        top: 0;
+        height: 320px;
+        right: -75px;
+        opacity: 0;
+        transform: translateX(30vw);
+
+        @media @tablet {
+            height: 370px;
+        }
+
+        @media @laptop {
+            height: 390px;
+        }
+    }
+
+    #intersection__background {
+        position: absolute;
+        height: 100%;
+        background-color: #0f110f;
+        width: 100vw;
+        z-index: -1;
+    }
+}
+
+#wines-section {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media @laptop {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    
+    .wine-tile:first-of-type {
+        position: relative;
+        top: 300px;
+    }
+
+    .wine-tile:nth-of-type(2) {
+        position: relative;
+        top: 600px;
+    }
+
+    .wine-tile:nth-of-type(3) {
+        position: relative;
+        top: 900px;
+    }
+
+    .wine-tile {
+        background-color: #fff;
+        margin-top: 120px;
+        border: 1px solid #707070;
+        padding: 0 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        transform: perspective(650px) rotateY(15deg);
+
+        @media @tablet {
+            padding: 0;
+            margin-top: 200px;
+        }
+        
+        .wine-tile__image {
+            height: 350px;
+            position: relative;
+            top: -90px;
+
+            @media @tablet {
+                height: 450px;
+                top: -110px;
+            }
+
+            @media @laptop {
+                height: 550px;
+                top: -135px;
+            }
+
+            @media @desktop {
+                height: 600px;
+            }
+        }
+        .wine-tile__text {
+            margin: 0 35px;
+            display: flex;
+            flex-direction: column;
+
+            @media @laptop {
+                margin: 0 27px;
+            }
+
+            @media @desktop {
+                margin: 0 35px;
+            }
+        
+            h3 {
+                font-family: Playfair Display, Arial;
+                font-size: 25px;
+                margin-top: -85px;
+                margin-bottom: 5px;
+
+
+                @media @tablet {
+                    font-size: 30px;
+                    margin-top: -130px;
+                }
+
+                @media @desktop {
+                    font-size: 32.5px;
+                }
+            }
+
+            p {
+                font-family: Proxima Nova Alt Light, Arial;
+                width: 190px;
+                font-size: 17px;
+                margin: 5px 0 45px;
+                overflow-wrap: break-word;
+
+                @media @tablet {
+                    font-size: 17px;
+                    width: 220px;
+                }
+
+                @media @desktop {
+                    font-size: 20px;
+                    width: 250px;
+                }
+            }
+        }
+    }
+
+    #cheese {
+        position: absolute;
+        width: 409.75px;
+        top: ~'calc(120vh + 846.5px)';
+        right: -50px;
+
+        @media @tablet {
+            width: 512.2px;
+            top: ~'calc(120vh + 1046.5px)';
+        }
+
+        @media @laptop {
+            top: ~'calc(120vh + 826.5px)';
+            width: 563.42px;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 150px 15px 0;
+    background-color: #000;
+    color: #fff;
+    align-items: flex-start;
+
+    @media @tablet {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 150px 25px 15px;
+    }
+
+    @media @laptop {
+        padding: 150px 10px 75px;
+    }
+
+    #logo-footer {
+        display: flex;
+        flex-direction: column;
+        font-family: Playfair Display, Arial;
+        font-size: 25px;
+        width: auto;
+        align-items: center;
+
+        @media @tablet {
+            font-size: 30px;
+        }
+
+        @media @laptop {
+            font-size: 35px;
+        }
+
+        img {
+            width: 25%;
+        }
+    }
+
+    #links-footer {
+        display: flex;
+        align-self: stretch;
+        margin-top: 30px;
+        flex-wrap: wrap;
+
+        @media @tablet {
+            margin-top: 75px;
+        }
+
+        .links-footer__column {
+            display: flex;
+            flex-direction: column;
+            margin-right: 30px;
+            margin-bottom: 10px;
+
+            @media @laptop {
+                margin-right: 100px;
+            }
+
+            h4 {
+                font-family: Playfair Display, Arial;
+                font-size: 20px;
+
+                @media @tablet {
+                    font-size: 25px;
+                }
+
+                @media @laptop {
+                    font-size: 27.5px;
+                }
+            }
+
+            a {
+                font-family: Proxima Nova Alt Light, Arial;
+                font-size: 12.5px;
+                margin: 12.5px 0;
+                
+                @media @tablet {
+                    font-size: 14.5px;
+                }
+            }
+        }
+
+        .links-footer__column:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
